@@ -53,13 +53,13 @@ GEOS_Util:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.44.0
+  tag: v2.51.2
   develop: develop
 
 FMS:
   local: ./src/Shared/@FMS
   remote: ../FMS.git
-  tag: geos/2019.01.02+noaff.10
+  tag: geos/2019.01.02+noaff.8
   develop: geos/release/2019.01
 
 GEOSana_GridComp:
