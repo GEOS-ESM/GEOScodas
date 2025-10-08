@@ -1,4 +1,4 @@
-# CoDAS 
+# GEOS CoDAS 
 This document covers the basics of downloading, compiling, running, and
 analyzing results from the Constituent Data Assimilation System (CoDAS) within NASA's
 Goddard Earth Observing System (GEOS). To run CoDAS, you’ll need executables for the GEOS
@@ -19,6 +19,7 @@ heritage. We are in the process of converting the existing C shell code to bash 
 5. [Outputs](#outputs)
 6. [Downloading and compiling CoDAS](#downloading-and-compiling-codas)
 7. [Pitfalls](#pitfalls)
+8. [Tuning](#tuning)
 
 ## Quickstart on Discover
 The environment variable `$NOBACKUP` is pre-defined on Discover to point to your
@@ -238,12 +239,44 @@ cd GEOSagcm/src
 ## Pitfalls
 1. Never run with MERRA-2 emissions. It will overwrite your emissions choices.
 2. Never use `gcm_emip.setup`. It will overwrite your restarts.
-3. Check that the Henry's law coefficients for `CO2` are 0. Probably for `CH4` too
+3. Check that the Henry's law coefficients for `CO2` are 0. Probably for `CH4` too.
 4. If CoDAS isn't assimilating observations, your ssh key may be mangled. Try running
 ```
 ssh discover
 ```
 and make sure it works.
+
+## Tuning
+Below we give an example for tuning the assimilation of TROPOMI CH4.
+1. Find the line starting with `tropomi_ch4_s5p` in `analyze/etc/tgasinfo`.
+You can tune the observation error covariance, `R`, by varying the error
+inflate entry in this table.
+
+2. Open an interactive session on the debug queue:
+```
+salloc --ntasks=486 --constraint=mil --qos=debug
+```
+
+3. Run `./codas_run.j` and wait until you start seeing some lines that look
+like:
+```
+    Observation Type           Nobs                        Jo        Jo/n
+trace gases                   31398    1.0532275097286580E+05       3.354
+                               Nobs                        Jo        Jo/n
+           Jo Global          31398    1.0532275097286580E+05       3.354
+```
+
+You want the last number (`Jo/n`) in those lines to start at something greater
+than 1, but still the same order, say 1.8 or 2.4 (3.3 seems ok), and finish at
+something less than 1, but still the same order, say 0.8 or so. You'll need to
+run for at least a few cycles to burn in and then track these numbers.
+
+You can always grep for `"trace gases      "` (with the spaces) to find these
+lines in slurm files.
+
+The other number you could change (the model error covariance, `B`) is set in
+the `analyze/codas.rc` file. The number there will determine how big the
+differences are in the initial `Jo/n` value and the final `Jo/n` value.
 
 ## Any questions?
 
