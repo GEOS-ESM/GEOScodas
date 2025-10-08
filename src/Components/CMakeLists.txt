@@ -1,0 +1,5 @@
+add_subdirectory (@GEOSgcm_GridComp)
+add_subdirectory (@g5pert)
+add_subdirectory (@GEOSagcmPert_GridComp)
+add_subdirectory (@GEOSana_GridComp)
+add_subdirectory (@Ocean-LETKF)

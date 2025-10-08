@@ -37,6 +37,13 @@ GMAOpyobs:
   tag: v1.0.6
   develop: develop
 
+AeroML:
+  local: ./src/Shared/@AeroML
+  remote: ../AeroML.git
+  tag: feature/rtodling/abs2obs/cak_tag0
+  develop: develop
+  sparse: ./config/AeroML.sparse
+
 GEOS_Util:
   local: ./src/Shared/@GMAO_Shared/@GEOS_Util
   remote: ../GEOS_Util.git
