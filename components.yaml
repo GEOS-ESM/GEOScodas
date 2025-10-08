@@ -28,7 +28,7 @@ NCEP_Shared:
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  branch: v1.9.9
+  branch: feature/bweir/#305-codas
   develop: main
 
 GMAOpyobs:
@@ -36,13 +36,6 @@ GMAOpyobs:
   remote: ../GMAOpyobs.git
   tag: v1.0.6
   develop: develop
-
-AeroML:
-  local: ./src/Shared/@AeroML
-  remote: ../AeroML.git
-  tag: feature/rtodling/abs2obs/cak_tag0
-  develop: develop
-  sparse: ./config/AeroML.sparse
 
 GEOS_Util:
   local: ./src/Shared/@GMAO_Shared/@GEOS_Util
@@ -65,7 +58,7 @@ FMS:
 GEOSana_GridComp:
   local: ./src/Components/@GEOSana_GridComp
   remote: ../GEOSana_GridComp.git
-  branch: feature/rtodling/merge_5295p7_x50R1_2_dev
+  branch: feature/bweir/#79-codas
   develop: develop
 
 mksi:
