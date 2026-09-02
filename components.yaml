@@ -28,7 +28,7 @@ NCEP_Shared:
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  branch: feature/bweir/#305-codas
+  branch: feature/bweir/codas
   develop: main
 
 GMAOpyobs:
@@ -108,7 +108,7 @@ fvdycore:
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
   remote: ../GEOSchem_GridComp.git
-  tag: geoscf/CFv2/rc1/t2
+  tag: geoscr/v1
   develop: develop
 
 HEMCO:
@@ -120,13 +120,13 @@ HEMCO:
 geos-chem:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/GEOSCHEMchem_GridComp/@geos-chem
   remote: ../geos-chem.git
-  tag: geoscf/CFv2/rc1/t14
+  tag: geos/cr
   develop: geos/develop
 
 GOCART:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART
   remote: ../GOCART.git
-  tag: feature/bweir/#203-codas
+  tag: feature/bweir/codas
   develop: develop
 
 QuickChem:
@@ -134,24 +134,6 @@ QuickChem:
   remote: ../QuickChem.git
   tag: v1.0.0
   develop: main
-
-TR:
-  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@TR
-  remote: ../TR.git
-  tag: v1.1.0
-  develop: develop
-
-GMI:
-  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GMI
-  remote: ../GMI.git
-  tag: v1.1.0
-  develop: develop
-
-StratChem:
-  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@StratChem
-  remote: ../StratChem.git
-  tag: v1.0.0
-  develop: develop
 
 GEOS_OceanGridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp
