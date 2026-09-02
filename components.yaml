@@ -71,13 +71,13 @@ GEOSana_GridComp:
 mksi:
    local: ./src/Components/@GEOSana_GridComp/GEOSaana_GridComp/GSI_GridComp/@mksi
    remote: ../GEOS_mksi.git
-   branch: feature/rtodling/x50R8rt
+   branch: geoscr/v1
    develop: develop
 
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: GCMv1.17.0+GCCv14+gsi_coupling-p3
+  tag: geoscr/v1
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
@@ -190,18 +190,6 @@ RRTMGP:
   tag: geos/v1.5+1.0.0
   develop: geos/develop
   sparse: ./config/RRTMGP.sparse
-
-ww3:
-  local: ./src/Components/@GEOSgcm_GridComp/GEOSwgcm_GridComp/GEOSwavewatch_GridComp/@ww3
-  remote: ../WW3.git
-  tag: v6.07.1-geos-r2
-  develop: geos/develop
-
-umwm:
-  local: ./src/Components/@GEOSgcm_GridComp/GEOSwgcm_GridComp/GEOSumwm_GridComp/@umwm
-  remote: ../umwm.git
-  tag: v2.0.0-geos-r1
-  develop: geos
 
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
