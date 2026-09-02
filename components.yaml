@@ -65,7 +65,7 @@ FMS:
 GEOSana_GridComp:
   local: ./src/Components/@GEOSana_GridComp
   remote: ../GEOSana_GridComp.git
-  branch: feature/bweir/#79-codas
+  branch: feature/bweir/codas
   develop: develop
 
 mksi:
